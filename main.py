@@ -1,11 +1,13 @@
-#a recursive function is a function that calls itself in its own function definition
-def factorial(n):
-    #base case or stop case
-    if n==1 or n==0:
-        return 1
-    #recursive case
-    else:
-        return n*factorial(n-1)
-n=int(input("Enter a number "))
-ans=factorial(n)
-print("The factorial of {} is {}".format(n,ans))
+#linear search
+list1= [1,2,3,4,5,6,7,8,9,10]
+print(list1)
+key=int(input("What number do you want to search?: "))
+found=False
+
+for i in range(0,len(list1)):
+    if list1[i] == key:
+        print("The key exists")
+        found=True
+        break
+if found == False:
+    print("The key does not exist") 
