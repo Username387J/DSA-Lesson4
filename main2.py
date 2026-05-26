@@ -1,15 +1,21 @@
-#fibonacci- sum of two previous numbers
-def fib(n):
-    if n==0:
-        return 0
-    elif n==1 or n ==2:
-        return 1
-    else:
-        return fib(n-1)+fib(n-2)
-n=int(input("Enter a number "))
-ans=fib(n)
-print("The fibonacci of {} is {}".format(n,ans))
+#Binary search
+list1=[1,2,3,4,5,6,7,8,9,10]
+key=int(input("Enter a number to search: "))
+start=0
+end=len(list1)-1
+found=False
 
-#printing the fibonacci sequence
-for i in range(0,n+1):
-    print(fib(i))
+while start <= end:
+    mid=(start + end) // 2
+    if list1[mid]==key:
+        print("The key exists")
+        found=True
+        break
+    elif list1[mid]>key:
+        end=mid-1
+    else:
+        start=mid+1
+
+if found == False:
+    print("The key does not exist")
+    
